@@ -20,11 +20,12 @@
       left: 0;
     }
 
-    footer {
-      position: relative;
-    }
+    #map > img:last-child { position: relative }
+
   </style>
 </head>
+
+
 <body>
   <div id="checkboxes">
     <p><input type="checkbox" name="group" data-countries="eng,wal,sco,ni" id="checkbox-uk" checked>
@@ -52,8 +53,10 @@
     <img id="img-roi" class="lock-position" data-country="roi" src="maps/republic_of_ireland.svg" alt="republic of ireland">
   </div>
   <footer>
-    <p>A <a href="https://github.com/danielthepope/whatistheuk">quick hack</a> by <a href="https://twitter.com/danielthepope">@danielthepope</a></p>
+    <p>A <a href="https://github.com/danielthepope/whatistheuk">quick hack</a> by <a href="https://twitter.com/danielthepope">@danielthepope</a>. Map adapted from <a href="https://commons.wikimedia.org/wiki/Category:SVG_maps_of_the_United_Kingdom#/media/File:British_Isles_interactive.svg">this picture</a>.</p>
   </footer>
+
+
   <script>
     document.getElementById("img-roi").style.opacity = "0.3";
 
