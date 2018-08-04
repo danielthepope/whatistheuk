@@ -7,8 +7,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src="main.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    #map {
+      position: relative;
+    }
+
+    .lock-position {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    footer {
+      position: relative;
+    }
+  </style>
 </head>
 <body>
-  Coming soon...
+  <div id="map">
+    <img class="lock-position" src="maps/england.svg" alt="england">
+    <img class="lock-position" src="maps/wales.svg" alt="wales">
+    <img class="lock-position" src="maps/scotland.svg" alt="scotland">
+    <img class="lock-position" src="maps/northern_ireland.svg" alt="northern ireland">
+    <!-- <img class="lock-position" src="maps/republic_of_ireland.svg" alt="republic of ireland"> -->
+  </div>
+  <footer>
+    <p>A <a href="https://github.com/danielthepope/whatistheuk">quick hack</a> by <a href="https://twitter.com/danielthepope">@danielthepope</a></p>
+  </footer>
 </body>
 </html>
