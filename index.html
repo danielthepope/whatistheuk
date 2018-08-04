@@ -5,8 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>What is the UK?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script src="main.js"></script>
   <style>
     body {
       font-family: sans-serif;
@@ -28,15 +26,79 @@
   </style>
 </head>
 <body>
+  <div id="checkboxes">
+    <p><input type="checkbox" name="group" data-countries="eng,wal,sco,ni" id="checkbox-uk" checked>
+      <label for="checkbox-uk"><strong>The United Kindom (of Great Britain and Northern Ireland)</strong></label></p>
+    <p><input type="checkbox" name="group" data-countries="eng,wal,sco" id="checkbox-gbr" checked>
+      <label for="checkbox-gbr"><strong>Great Britain</strong></label></p>
+    <p><input type="checkbox" name="group" data-countries="ni,roi" id="checkbox-ire">
+      <label for="checkbox-ire"><strong>Ireland</strong></label></p>
+    <p><input type="checkbox" name="country" data-country="eng" id="checkbox-eng" checked>
+      <label for="checkbox-eng">England</label></p>
+    <p><input type="checkbox" name="country" data-country="wal" id="checkbox-wal" checked>
+      <label for="checkbox-wal">Wales</label></p>
+    <p><input type="checkbox" name="country" data-country="sco" id="checkbox-sco" checked>
+      <label for="checkbox-sco">Scotland</label></p>
+    <p><input type="checkbox" name="country" data-country="ni" id="checkbox-ni" checked>
+      <label for="checkbox-ni">Northern Ireland</label></p>
+    <p><input type="checkbox" name="country" data-country="roi" id="checkbox-roi">
+      <label for="checkbox-roi">Republic of Ireland</label></p>
+  </div>
   <div id="map">
-    <img class="lock-position" src="maps/england.svg" alt="england">
-    <img class="lock-position" src="maps/wales.svg" alt="wales">
-    <img class="lock-position" src="maps/scotland.svg" alt="scotland">
-    <img class="lock-position" src="maps/northern_ireland.svg" alt="northern ireland">
-    <!-- <img class="lock-position" src="maps/republic_of_ireland.svg" alt="republic of ireland"> -->
+    <img id="img-eng" class="lock-position" data-country="eng" src="maps/england.svg" alt="england">
+    <img id="img-wal" class="lock-position" data-country="wal" src="maps/wales.svg" alt="wales">
+    <img id="img-sco" class="lock-position" data-country="sco" src="maps/scotland.svg" alt="scotland">
+    <img id="img-ni" class="lock-position" data-country="ni" src="maps/northern_ireland.svg" alt="northern ireland">
+    <img id="img-roi" class="lock-position" data-country="roi" src="maps/republic_of_ireland.svg" alt="republic of ireland">
   </div>
   <footer>
     <p>A <a href="https://github.com/danielthepope/whatistheuk">quick hack</a> by <a href="https://twitter.com/danielthepope">@danielthepope</a></p>
   </footer>
+  <script>
+    document.getElementById("img-roi").style.opacity = "0.3";
+
+    var countryCheckboxes = document.querySelectorAll('div#checkboxes [name=country]');
+    countryCheckboxes.forEach(function(e) {
+      e.onchange = function() { updateCountry(e) };
+    })
+
+    var groups = document.querySelectorAll('div#checkboxes [name=group]');
+    groups.forEach(function(e) {
+      e.onchange = function() { updateGroup(e) };
+    })
+
+    function updateCountry(e) {
+      var country = e.attributes.getNamedItem('data-country').value;
+      var checked = e.checked;
+      if (checked) {
+        document.querySelector('img[data-country=' + country + ']').style.opacity = 1;
+      } else {
+        document.querySelector('img[data-country=' + country + ']').style.opacity = 0.3;
+      }
+      fixGroupCheckboxes();
+    }
+
+    function updateGroup(e) {
+      var countries = e.attributes.getNamedItem('data-countries').value.split(',');
+      var checked = e.checked;
+      countries.forEach(country => {
+        var element = document.querySelector('div#checkboxes input[data-country=' + country + ']');
+        element.checked = checked;
+        element.onchange();
+      });
+    }
+
+    function fixGroupCheckboxes() {
+      groups.forEach(e => {
+        var countries = e.attributes.getNamedItem('data-countries').value.split(',');
+        var activeCountries = countries.filter(country => document.querySelector('div#checkboxes input[data-country=' + country + ']').checked);
+        if (countries.length === activeCountries.length) {
+          e.checked = true;
+        } else {
+          e.checked = false;
+        }
+      })
+    }
+  </script>
 </body>
 </html>
