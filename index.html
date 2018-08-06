@@ -14,43 +14,50 @@
       position: relative;
     }
 
-    .lock-position {
+    .map-part {
       position: absolute;
       top: 0;
       left: 0;
+      max-width: 100%;
     }
 
     #map > img:last-child { position: relative }
 
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
   </style>
 </head>
 
 
 <body>
-  <div id="checkboxes">
-    <p><input type="checkbox" name="group" data-countries="eng,wal,sco,ni" id="checkbox-uk" checked>
-      <label for="checkbox-uk"><strong>The United Kingdom (of Great Britain and Northern Ireland)</strong></label></p>
-    <p><input type="checkbox" name="group" data-countries="eng,wal,sco" id="checkbox-gbr" checked>
-      <label for="checkbox-gbr"><strong>Great Britain</strong></label></p>
-    <p><input type="checkbox" name="group" data-countries="ni,roi" id="checkbox-ire">
-      <label for="checkbox-ire"><strong>Ireland</strong></label></p>
-    <p><input type="checkbox" name="country" data-country="eng" id="checkbox-eng" checked>
-      <label for="checkbox-eng">England</label></p>
-    <p><input type="checkbox" name="country" data-country="wal" id="checkbox-wal" checked>
-      <label for="checkbox-wal">Wales</label></p>
-    <p><input type="checkbox" name="country" data-country="sco" id="checkbox-sco" checked>
-      <label for="checkbox-sco">Scotland</label></p>
-    <p><input type="checkbox" name="country" data-country="ni" id="checkbox-ni" checked>
-      <label for="checkbox-ni">Northern Ireland</label></p>
-    <p><input type="checkbox" name="country" data-country="roi" id="checkbox-roi">
-      <label for="checkbox-roi">Republic of Ireland</label></p>
-  </div>
-  <div id="map">
-    <img id="img-eng" class="lock-position" data-country="eng" src="maps/england.svg" alt="england">
-    <img id="img-wal" class="lock-position" data-country="wal" src="maps/wales.svg" alt="wales">
-    <img id="img-sco" class="lock-position" data-country="sco" src="maps/scotland.svg" alt="scotland">
-    <img id="img-ni" class="lock-position" data-country="ni" src="maps/northern_ireland.svg" alt="northern ireland">
-    <img id="img-roi" class="lock-position" data-country="roi" src="maps/republic_of_ireland.svg" alt="republic of ireland">
+  <div class="flex">
+    <div id="checkboxes">
+      <p><input type="checkbox" name="group" data-countries="eng,wal,sco,ni" id="checkbox-uk" checked>
+        <label for="checkbox-uk"><strong>The United Kingdom (of Great Britain and Northern Ireland)</strong></label></p>
+      <p><input type="checkbox" name="group" data-countries="eng,wal,sco" id="checkbox-gbr" checked>
+        <label for="checkbox-gbr"><strong>Great Britain</strong></label></p>
+      <p><input type="checkbox" name="group" data-countries="ni,roi" id="checkbox-ire">
+        <label for="checkbox-ire"><strong>Ireland</strong></label></p>
+      <p><input type="checkbox" name="country" data-country="eng" id="checkbox-eng" checked>
+        <label for="checkbox-eng">England</label></p>
+      <p><input type="checkbox" name="country" data-country="wal" id="checkbox-wal" checked>
+        <label for="checkbox-wal">Wales</label></p>
+      <p><input type="checkbox" name="country" data-country="sco" id="checkbox-sco" checked>
+        <label for="checkbox-sco">Scotland</label></p>
+      <p><input type="checkbox" name="country" data-country="ni" id="checkbox-ni" checked>
+        <label for="checkbox-ni">Northern Ireland</label></p>
+      <p><input type="checkbox" name="country" data-country="roi" id="checkbox-roi">
+        <label for="checkbox-roi">Republic of Ireland</label></p>
+    </div>
+    <div id="map">
+      <img id="img-eng" class="map-part" data-country="eng" src="maps/england.svg" alt="england">
+      <img id="img-wal" class="map-part" data-country="wal" src="maps/wales.svg" alt="wales">
+      <img id="img-sco" class="map-part" data-country="sco" src="maps/scotland.svg" alt="scotland">
+      <img id="img-ni" class="map-part" data-country="ni" src="maps/northern_ireland.svg" alt="northern ireland">
+      <img id="img-roi" class="map-part" data-country="roi" src="maps/republic_of_ireland.svg" alt="republic of ireland">
+    </div>
   </div>
   <footer>
     <p>A <a href="https://github.com/danielthepope/whatistheuk">quick hack</a> by <a href="https://twitter.com/danielthepope">@danielthepope</a>. Map adapted from <a href="https://commons.wikimedia.org/wiki/Category:SVG_maps_of_the_United_Kingdom#/media/File:British_Isles_interactive.svg">this picture</a>.</p>
