@@ -34,7 +34,7 @@
 <body>
   <div class="flex">
     <div id="checkboxes">
-      <p><input type="checkbox" name="group" data-countries="eng,wal,sco,ni,roi" id="checkbox-bi">
+      <p><input type="checkbox" name="group" data-countries="eng,wal,sco,ni,roi,jer,gue,iom" id="checkbox-bi">
         <label for="checkbox-bi"><strong>The British Isles</strong></label></p>
       <p><input type="checkbox" name="group" data-countries="eng,wal,sco,ni" id="checkbox-uk" checked>
         <label for="checkbox-uk"><strong>The United Kingdom (of Great Britain and Northern Ireland)</strong></label></p>
@@ -52,6 +52,12 @@
         <label for="checkbox-ni">Northern Ireland</label></p>
       <p><input type="checkbox" name="country" data-country="roi" id="checkbox-roi">
         <label for="checkbox-roi">Republic of Ireland</label></p>
+      <p><input type="checkbox" name="country" data-country="jer" id="checkbox-jer">
+        <label for="checkbox-jer">Jersey</label></p>
+      <p><input type="checkbox" name="country" data-country="gue" id="checkbox-gue">
+        <label for="checkbox-gue">Guernsey</label></p>
+      <p><input type="checkbox" name="country" data-country="iom" id="checkbox-iom">
+        <label for="checkbox-iom">Isle of Man</label></p>
     </div>
     <div id="map">
       <img id="img-eng" class="map-part" data-country="eng" src="maps/england.svg" alt="england">
@@ -59,6 +65,9 @@
       <img id="img-sco" class="map-part" data-country="sco" src="maps/scotland.svg" alt="scotland">
       <img id="img-ni" class="map-part" data-country="ni" src="maps/northern_ireland.svg" alt="northern ireland">
       <img id="img-roi" class="map-part" data-country="roi" src="maps/republic_of_ireland.svg" alt="republic of ireland">
+      <img id="img-jer" class="map-part" data-country="jer" src="maps/jersey.svg" alt="jersey">
+      <img id="img-gue" class="map-part" data-country="gue" src="maps/guernsey.svg" alt="guernsey">
+      <img id="img-iom" class="map-part" data-country="iom" src="maps/isle_of_man.svg" alt="isle_of_man">
     </div>
   </div>
   <footer>
@@ -67,17 +76,16 @@
 
 
   <script>
-    document.getElementById("img-roi").style.opacity = "0.3";
+    var groups = document.querySelectorAll('div#checkboxes [name=group]');
+    groups.forEach(function(e) {
+      e.onchange = function() { updateGroup(e) };
+    });
 
     var countryCheckboxes = document.querySelectorAll('div#checkboxes [name=country]');
     countryCheckboxes.forEach(function(e) {
       e.onchange = function() { updateCountry(e) };
-    })
-
-    var groups = document.querySelectorAll('div#checkboxes [name=group]');
-    groups.forEach(function(e) {
-      e.onchange = function() { updateGroup(e) };
-    })
+      updateCountry(e);
+    });
 
     function updateCountry(e) {
       var country = e.attributes.getNamedItem('data-country').value;

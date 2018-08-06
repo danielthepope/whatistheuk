@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="90.928535mm"
+   height="150.51758mm"
+   id="svg2116"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="isle_of_man.svg">
+  <metadata
+     id="metadata400">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3840"
+     inkscape:window-height="2004"
+     id="namedview398"
+     showgrid="false"
+     units="mm"
+     inkscape:zoom="4.5254831"
+     inkscape:cx="173.9849"
+     inkscape:cy="127.7697"
+     inkscape:window-x="-16"
+     inkscape:window-y="-16"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2116"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2118" />
+  <path
+     inkscape:connector-curvature="0"
+     id="IsleOfMan"
+     style="display:inline;fill:#aebcab;fill-opacity:1;stroke:#0e0e07;stroke-width:1.48000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 172.01175,335.29134 c -1.40645,2.34528 -0.0189,4.60347 1.02867,5.75731 -1.86914,2.50837 -1.60383,4.88737 -4.36191,6.50092 -0.41731,1.55964 -3.87053,3.0911 -4.09047,4.13878 -1.43513,-0.38148 -2.72299,-0.87436 -4.5785,0.26151 1.09994,-2.17554 1.22606,-5.75344 2.64476,-7.81232 4.06681,-2.1609 3.23246,-8.59243 8.66898,-9.03085 0.26531,-0.30933 0.58658,-0.1736 0.68847,0.18465 z" />
+</svg>
